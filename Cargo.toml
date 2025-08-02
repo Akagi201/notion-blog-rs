@@ -1,19 +1,58 @@
 [package]
-name = "notion-blog"
+name = "notion-site-proxy"
 version = "0.1.0"
-edition = "2021"
-
-# https://github.com/rustwasm/wasm-pack/issues/1247
-[package.metadata.wasm-pack.profile.release]
-wasm-opt = false
-
-[lib]
-crate-type = ["cdylib"]
+edition = "2024"
+authors = ["Akagi201 <akagi201@gmail.com>"]
+description = "A Notion site proxy server built with Rust and Axum"
+readme = "README.md"
+license = "Apache-2.0"
 
 [dependencies]
-worker = "0.0.18"
+# Web framework
+axum = "0.8"
+tower = "0.5"
+tower-http = { version = "0.6", features = ["cors", "trace", "fs"] }
 
-[profile.release]
-lto = true
-strip = true
-codegen-units = 1
+# HTTP client
+reqwest = { version = "0.12", features = ["json", "stream"] }
+
+# Async runtime
+tokio = { version = "1.0", features = ["full"] }
+
+# Serialization
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+# Configuration
+clap = { version = "4.0", features = ["derive"] }
+config = "0.15"
+
+# Logging
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
+# HTML parsing and rewriting
+# html5ever = "0.35"  # Currently unused
+# scraper = "0.23"    # Currently unused
+
+# URL parsing
+url = "2.5"
+
+# Caching
+moka = { version = "0.12", features = ["future"] }
+
+# Regular expressions
+regex = "1.10"
+
+# Error handling
+anyhow = "1.0"
+thiserror = "2.0"
+
+# DateTime
+# chrono = { version = "0.4", features = ["serde"] }  # Currently unused
+
+# TOML parsing
+toml = "0.9"
+
+[dev-dependencies]
+tower-test = "0.4"

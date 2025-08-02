@@ -1,0 +1,41 @@
+# Example configuration for notion-site-proxy
+# Copy this file to config.toml and modify for your setup
+
+[server]
+host = "0.0.0.0"
+port = 3000
+log_level = "info"
+
+[notion]
+username = "your-notion-username"  # Replace with your Notion username from yourname.notion.site
+user_agent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.163 Safari/537.36"
+
+[cache]
+max_capacity = 1000
+time_to_live_secs = 3600
+
+# Example domain configuration
+# Replace "example.com" with your actual domain
+[domains."example.com"]
+my_domain = "example.com"
+page_title = "My Notion Site"
+page_description = "A beautiful website powered by Notion"
+google_font = "Inter"
+custom_script = ""
+
+# URL slug mapping - replace with your actual Notion page IDs
+[domains."example.com".slug_to_page]
+"" = "replace-with-your-homepage-notion-page-id"      # Homepage (32-character ID)
+"about" = "replace-with-your-about-page-notion-id"    # About page
+"contact" = "replace-with-your-contact-page-id"       # Contact page
+"blog" = "replace-with-your-blog-page-notion-id"      # Blog page
+
+# You can add more domains here for multi-site hosting
+# [domains."another-domain.com"]
+# my_domain = "another-domain.com"
+# page_title = "Another Site"
+# page_description = "Another Notion-powered site"
+# 
+# [domains."another-domain.com".slug_to_page]
+# "" = "another-homepage-id"
+# "portfolio" = "portfolio-page-id"
