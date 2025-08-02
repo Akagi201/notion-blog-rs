@@ -83,7 +83,7 @@ custom_script = '''
 
 ### Docker Deployment
 ```bash
-docker run -p 3000:3000 -v $(pwd)/config.toml:/app/config.toml ghcr.io/akagi201/notion-blog-rs:latest
+docker run -p 3000:3000 -v $(pwd)/config.toml:/app/config.toml ghcr.io/akagi201/notion-site-proxy:latest
 ```
 
 ## Architecture
@@ -109,5 +109,5 @@ The proxy:
 ## Support
 
 - 📖 [Full Documentation](README.md)
-- 🐛 [Report Issues](https://github.com/Akagi201/notion-blog-rs/issues)
-- 💬 [Discussions](https://github.com/Akagi201/notion-blog-rs/discussions)
+- 🐛 [Report Issues](https://github.com/Akagi201/notion-site-proxy/issues)
+- 💬 [Discussions](https://github.com/Akagi201/notion-site-proxy/discussions)

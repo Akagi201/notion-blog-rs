@@ -38,8 +38,8 @@ This server acts as a reverse proxy between your custom domain and Notion. When 
 #### From Source
 
 ```bash
-git clone https://github.com/Akagi201/notion-blog-rs.git
-cd notion-blog-rs
+git clone https://github.com/Akagi201/notion-site-proxy.git
+cd notion-site-proxy
 cargo build --release
 ```
 
